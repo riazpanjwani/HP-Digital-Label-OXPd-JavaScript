@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    <script src="Resources/JavaScript/logger.js"></script>
+    <script src="http://code.jquery.com/jquery-1.12.4.min.js"
+            integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+            crossorigin="anonymous"></script>
+    <script src="Resources/JavaScript/oxpddeviceinfo-2.0.0.min.js"></script>
+    <script src="Resources/JavaScript/oxpddiscovery-2.0.0.min.js"></script>
+    <script src="Resources/JavaScript/oxpdprint-2.0.0.min.js"></script>
+    <script src="Resources/JavaScript/oxpdscan-2.0.0.min.js"></script>
+    <script src="Resources/JavaScript/main.js"></script>
+    <title>Print Device Information</title>
+</head>
+
+
+<body>
+    
+    <p>Model: <a id="modprint"></a></p>
+    <p>Hostname: <a id="hostprint"></a></p>
+    <p>Network Address: <a id="ipprint"></a></p>
+    <p>MAC Address: <a id="macprint"></a></p>
+    <p>Firmware Version: <a id="osprint"></a></p>
+    <p>Product Number: <a id="prodprint"></a></p>
+    <p>Serial Number: <a id="serialprint"></a> </p>
+
+    <script type="text/javascript">
+        document.getElementById("serialprint").innerHTML = localStorage.getItem("serialprint");
+        document.getElementById("hostprint").innerHTML = localStorage.getItem("hostprint");
+        document.getElementById("osprint").innerHTML = localStorage.getItem("osprint");
+        document.getElementById("modprint").innerHTML = localStorage.getItem("modprint");
+        document.getElementById("ipprint").innerHTML = localStorage.getItem("ipprint");
+        document.getElementById("prodprint").innerHTML = localStorage.getItem("prodprint");
+        document.getElementById("macprint").innerHTML = localStorage.getItem("macprint");
+    </script>
+
+    <a href="index.html"><input class="button" type="button" value="Go Home" /></a>
+
+</body>
+</html>

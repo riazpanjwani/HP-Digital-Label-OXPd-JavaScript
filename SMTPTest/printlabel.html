@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<link type="text/css" rel="stylesheet" href="Resources/CSS/printlabel.css" />
+	<script src="Resources/JavaScript/loggerprint.js">
+	</script>
+	<script src="http://code.jquery.com/jquery-1.12.4.min.js"
+			integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+			crossorigin="anonymous"></script>
+	<script src="Resources/JavaScript/oxpddeviceinfo-2.0.0.min.js"></script>
+	<script src="Resources/JavaScript/oxpddiscovery-2.0.0.min.js"></script>
+	<script src="Resources/JavaScript/oxpdprint-2.0.0.min.js"></script>
+	<script src="Resources/JavaScript/oxpdscan-2.0.0.min.js"></script>
+	<script src="Resources/JavaScript/mainprint.js"></script>
+	<title>Print Label</title>
+</head>
+
+<!--*************************************************************************-->
+
+<body>
+
+	<!--<script type="text/javascript">
+		switch (document.readyState) {
+			case "loading":
+				//Document loading
+				console.log("Page is loading");
+				break;
+			case "interactive":
+				// The document has finished loading. We can now access the DOM elements.
+				// But sub-resources such as images, stylesheets and frames are still loading.
+				console.log("Page is interactive");
+				break;
+			case "complete":
+				console.log("Page loaded");
+				setTimeout(function () { }, 5000);
+				main.print('http://d1dt3lk9ptjcdc.cloudfront.net/examples/sample-documents/test_page.txt');
+				break;
+		}
+
+		//document.addEventListener("load", function () {
+		//	main.print('http://d1dt3lk9ptjcdc.cloudfront.net/examples/sample-documents/test_page.txt');
+		//});
+	</script>-->
+	<!--<div>
+		<table>
+			<tr>
+				<td>
+					<input class="button" type="button" value="Send Print Job" onclick="mainprint.print('https://ipg-mis01-wja.auth.hpicorp.net:9443/mpsdigitallabel/printlabel.txt');" />
+				</td>
+				<td>
+					<a href="index.html"><input class="button" type="button" value="Go Home" id="email" /></a>
+				</td>
+			</tr>
+		</table>
+	</div>-->
+
+	<div class="buttoncenter">
+		<input class="button" type="button" value="Send Print Job" id="print" onclick="mainprint.print('https://ipg-mis01-wja.auth.hpicorp.net:9443/mpsdigitallabel/printlabel.txt'); disablebtn();" />
+		<a href="index.html"><input class="button" type="button" value="Go Home" id="home" /></a>
+	</div>
+
+	<script type="text/javascript">
+	function disablebtn () {
+		var homebtn = document.getElementById('home');
+		homebtn.disabled = true;
+		homebtn.style.backgroundColor = '#C0C0C0';
+	}
+	</script>
+
+	<!--Printer Image-->
+	<div>
+		<!-- HP LOGO -->
+		<img src="Resources/Assets/hpprint.png" alt="HP Printing" class="center" />
+	</div>
+
+	<!--STATUS BAR-->
+	<div class="status_bar"></div>
+
+</body>
+
+</html>

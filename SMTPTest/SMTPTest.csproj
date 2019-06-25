@@ -67,22 +67,51 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Default.aspx" />
-    <Content Include="Image\hp.png" />
+    <Content Include="default.aspx" />
+    <Content Include="printlabel.html" />
+    <Content Include="delete.html" />
+    <Content Include="index.html" />
+    <Content Include="Resources\Assets\hpprint.png" />
+    <Content Include="Resources\Assets\HP_Blue_RGB_72_SM.gif" />
+    <Content Include="Resources\CSS\emailstyle.css" />
+    <Content Include="Resources\CSS\createlabel.css" />
+    <Content Include="Resources\CSS\printlabel.css" />
+    <Content Include="Resources\CSS\style.css" />
+    <Content Include="Resources\CSS\pure.css" />
+    <Content Include="Resources\JavaScript\jspdf.debug.js" />
+    <Content Include="Resources\JavaScript\jspdf.js" />
+    <Content Include="Resources\JavaScript\jspdf.min.js" />
+    <Content Include="Resources\JavaScript\loggerprint.js" />
+    <Content Include="Resources\JavaScript\logger.js" />
+    <Content Include="Resources\JavaScript\mainprint.js" />
+    <Content Include="Resources\JavaScript\main.js" />
+    <Content Include="Resources\JavaScript\oxpddeviceinfo-2.0.0.min.js" />
+    <Content Include="Resources\JavaScript\oxpddiscovery-2.0.0.min.js" />
+    <Content Include="Resources\JavaScript\oxpdprint-2.0.0.min.js" />
+    <Content Include="Resources\JavaScript\oxpdscan-2.0.0.min.js" />
     <Content Include="Web.config" />
+    <Content Include="print.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="print.aspx.cs">
+      <DependentUpon>print.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="print.aspx.designer.cs">
+      <DependentUpon>print.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

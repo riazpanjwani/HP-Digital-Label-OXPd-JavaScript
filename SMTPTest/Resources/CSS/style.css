@@ -1,0 +1,71 @@
+﻿body {
+    margin: 3%;
+    padding: 0;
+    font-family: sans-serif
+}
+
+input[type='button'] {
+    background-color: cornflowerblue;
+    margin: 10px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    font-size: 20px;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+h1 {
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding-left: 15px
+}
+
+.column {
+    float: left;
+    width: 33.33%;
+    height: 100%;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    border-bottom: 2px solid #ddd;
+    padding: 8px;
+}
+
+#button_window {
+    position: fixed;
+    top: 10%;
+    left: 30%;
+    display: block;
+}
+
+.button {
+    height: 40px;
+    width: 200px;
+    display: block;
+}
+
+.disabled {
+    background-color: gainsboro;
+}
+
+.status_bar {
+    background-color: grey;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 92%;
+    padding: 10px;
+    color: white;
+    font-family: sans-serif;
+    font-size: 20px;
+}

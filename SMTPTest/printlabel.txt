@@ -1,0 +1,11 @@
+MANAGED PRINT SERVICES DEVICE
+
+Model: 
+Hostname: 
+Network Address: 
+Mac Address: 
+Firmware Version: 
+Product Number: 
+Serial Number: 
+
+For Support Call 1-800-HELPDESK
