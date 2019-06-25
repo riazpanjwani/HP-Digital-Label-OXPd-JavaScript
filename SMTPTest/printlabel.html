@@ -42,24 +42,14 @@
 		//	main.print('http://d1dt3lk9ptjcdc.cloudfront.net/examples/sample-documents/test_page.txt');
 		//});
 	</script>-->
-	<!--<div>
-		<table>
-			<tr>
-				<td>
-					<input class="button" type="button" value="Send Print Job" onclick="mainprint.print('https://ipg-mis01-wja.auth.hpicorp.net:9443/mpsdigitallabel/printlabel.txt');" />
-				</td>
-				<td>
-					<a href="index.html"><input class="button" type="button" value="Go Home" id="email" /></a>
-				</td>
-			</tr>
-		</table>
-	</div>-->
 
+	<!--Print and Go Home buttons-->
 	<div class="buttoncenter">
 		<input class="button" type="button" value="Send Print Job" id="print" onclick="mainprint.print('https://ipg-mis01-wja.auth.hpicorp.net:9443/mpsdigitallabel/printlabel.txt'); disablebtn();" />
 		<a href="index.html"><input class="button" type="button" value="Go Home" id="home" /></a>
 	</div>
 
+	<!--Script to disable home button once print job has started-->
 	<script type="text/javascript">
 	function disablebtn () {
 		var homebtn = document.getElementById('home');
@@ -70,7 +60,6 @@
 
 	<!--Printer Image-->
 	<div>
-		<!-- HP LOGO -->
 		<img src="Resources/Assets/hpprint.png" alt="HP Printing" class="center" />
 	</div>
 

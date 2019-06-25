@@ -14,57 +14,12 @@
 	<script src="Resources/JavaScript/oxpdprint-2.0.0.min.js"></script>
 	<script src="Resources/JavaScript/oxpdscan-2.0.0.min.js"></script>
 	<script src="Resources/JavaScript/main.js"></script>
-	<script src="Resources/JavaScript/jspdf.debug.js"></script>
 	<title>HP Inc. Digital Label</title>
 </head>
 
 <!--*************************************************************************-->
 
 <body>
-
-	<!--<script type="text/javascript">
-		//script to generate PDF using jsPDF library
-
-		function genPDF() {
-			console.log("Print button clicked");
-			var doc = new jsPDF();
-			doc.text(20, 20, "Test Page 1");
-			doc.addPage();
-			doc.text(20, 20, "Test Page 2");
-			console.log("NEW PDF Generated");
-			doc.setProperties({
-				title: 'PDF Title',
-				subject: 'Info about PDF',
-				author: 'PDFAuthor',
-				keywords: 'generated, javascript, web 2.0, ajax',
-				creator: 'My Company'
-			});
-			var pdf = doc.output('dataurlstring');
-			console.log(pdf);
-			//var retVal = navigator.msSaveOrOpenBlob(pdf, 'print.pdf');
-
-			//IE VERSION OF LINK GENERATING
-
-			//console.log("PDF SAVED")
-			//window.open(pdf);
-			//var myurl = (window.URL ? URL : webkitURL).createObjectURL(pdf);
-			//console.log("BLOB URL: " + pdf);
-			//window.open(pdf);
-			//window.open(url);
-		}
-
-		//window.onload = function genPDF() {
-			//var doc = new jsPDF();
-			//doc.text(20, 20, "Test page 1");
-			//doc.addPage();
-			//doc.text(20, 20, 'Test page 2');
-			//var blobpdf = new Blob([doc.output('dataurl')]); //figure out how to either short dataurl or get bloburi working
-			//var myurl = window.URL.createObjectURL(blobpdf);
-			//console.log("Blob url: " + myurl);
-			//window.open(myurl);
-			//main.print(url);
-		//}
-	</script>-->
 
 	<div style="display: inline-block; vertical-align: top; padding-bottom: 10px; padding-left: 10px">
 		<!-- HP LOGO -->
@@ -83,9 +38,9 @@
 		<div class="column">
 			<a href="print.aspx"><input class="button" type="button" value="Print Label" id="print" onclick="printlog()" /></a>
 			<!--<input class="button" type="button" value="Print Label" onclick="main.print('https://ipg-mis01-wja.auth.hpicorp.net:9443/mpsdigitallabel/');" />-->
-			<!--onclick="javascript: genPDF()"-->
 		</div>
 
+		<!--Loading print page script-->
 		<script type="text/javascript">
 			function printlog() {
 				console.log("Processing Request to Print...");
@@ -102,6 +57,7 @@
 		</div>
 	</div>
 
+	<!--Loading email page script-->
 	<script type="text/javascript">
 	function emaillog() {
 		console.log("Loading Email...");

@@ -7,6 +7,7 @@
         logger.Setup(".status_bar");
         console.log("Initializing...");
 
+        //OXPd print set up for printlabel page
         var futureTree = oxpddiscovery.GetOXPdDiscoveryTree();
 
         futureTree.then(

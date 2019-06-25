@@ -69,7 +69,6 @@
   <ItemGroup>
     <Content Include="default.aspx" />
     <Content Include="printlabel.html" />
-    <Content Include="delete.html" />
     <Content Include="index.html" />
     <Content Include="Resources\Assets\hpprint.png" />
     <Content Include="Resources\Assets\HP_Blue_RGB_72_SM.gif" />
@@ -78,8 +77,6 @@
     <Content Include="Resources\CSS\printlabel.css" />
     <Content Include="Resources\CSS\style.css" />
     <Content Include="Resources\CSS\pure.css" />
-    <Content Include="Resources\JavaScript\jspdf.debug.js" />
-    <Content Include="Resources\JavaScript\jspdf.js" />
     <Content Include="Resources\JavaScript\loggerprint.js" />
     <Content Include="Resources\JavaScript\logger.js" />
     <Content Include="Resources\JavaScript\mainprint.js" />

@@ -1,7 +1,7 @@
 ﻿var logger = function () {
     var instance = {};
 
-    // Store old log functions
+    // Logging for printlabel.html so that Ajax error is not shown when redirected to index.html
     var base = {};
     base.log = console.log;
     base.info = console.info;

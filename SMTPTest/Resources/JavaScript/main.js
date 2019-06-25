@@ -13,11 +13,13 @@ var main = function () {
 
 		futureTree.then(function (discoveryTree) {
 			try {
+				//Setup OXPd Discovery tree
 				oxpdprint.Setup(discoveryTree);
 				oxpddeviceinfo.Setup(discoveryTree);
 				oxpddeviceinfo.GetManufacturerInfo()
 					.then(function (deviceinfo) {
 						try {
+							//Save device information values
 							oxpddeviceinfo.GetManufacturerInfo();
 							serial = deviceinfo.deviceSerialNumber;
 							host = deviceinfo.hostName;
@@ -27,6 +29,7 @@ var main = function () {
 							prod = deviceinfo.productNumber;
 							mac = deviceinfo.macAddress;
 
+							//Display device information on html
 							document.getElementById("serialnumber").innerHTML = serial;
 							document.getElementById("hostname").innerHTML = host;
 							document.getElementById("firmware").innerHTML = os;
@@ -35,8 +38,7 @@ var main = function () {
 							document.getElementById("productnum").innerHTML = prod;
 							document.getElementById("mac").innerHTML = mac;
 
-							//host = String(deviceinfo.hostName); //test with String conversion
-							//serial = deviceinfo.deviceSerialNumber; //test without String conversion
+							//Store device information to local memory
 							localStorage.setItem("serialprint", serial);
 							console.log("STORING SERIAL: " + serial);
 							localStorage.setItem("hostprint", host);
@@ -67,25 +69,7 @@ var main = function () {
 	};
 
 	instance.print = function (document_location) {
-		/*var ip = "localhost";
-		oxpddiscovery.Setup(ip);
-		var printTree = oxpddiscovery.GetOXPdDiscoveryTree();
 
-		//Setup OXPd Print
-		printTree.then(
-			function (tree) {
-				try{
-					oxpdprint.Setup(tree, ip);
-					console.log("Initializing printer...");
-				} catch {
-					console.error(error);
-				}
-			},
-			function(error){
-				console.error(error);
-			}
-		);*/
-		// Submit the print job
 		var futurePrint = oxpdprint.PrintUri({
 			documentUri: document_location
 		});

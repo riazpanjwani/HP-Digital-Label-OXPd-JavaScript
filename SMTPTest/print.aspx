@@ -40,6 +40,7 @@
 			</div>
 		</div>
 
+		<!--BODY-->
 		<div>
 			<ul>
 				<li>To print the device information, click the "Create Label" button below to generate a printable label.</li>
@@ -69,7 +70,7 @@
 		</div>
 
 		<div>
-		<!--Retrieve device info from js and pass to backend-->
+		<!--Pass device information from javascript to these asp hidden fields-->
 		<asp:HiddenField ID="modelemail" runat="server" />
 		<asp:HiddenField ID="hostemail" runat="server" />
 		<asp:HiddenField ID="networkemail" runat="server" />
@@ -79,6 +80,7 @@
 		<asp:HiddenField ID="serialemail" runat="server" />
 		</div>
 
+		<!--Script to retrieve device information values from local memory-->
 		<script type="text/javascript">
 			document.getElementById("<%=modelemail.ClientID%>").value = localStorage.getItem("modprint");
 			document.getElementById("<%=hostemail.ClientID%>").value = localStorage.getItem("hostprint");

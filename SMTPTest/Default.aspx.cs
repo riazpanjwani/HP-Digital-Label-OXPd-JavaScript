@@ -17,6 +17,7 @@ namespace SMTPTest
         {
             try
             {
+                //Generate email from user input and device information values
                 string from = txtFrom.Text.Trim();
                 string to = txtTo.Text.Trim();
                 string subject = txtSubject.Text.Trim();
@@ -30,6 +31,7 @@ namespace SMTPTest
                     + "Product Number: " + prodemail.Value.ToString() + "<br/>"
                     + "Serial Number: " + serialemail.Value.ToString();
 
+                //Create SMTP object and initialize server
                 MailAddress fromAddr = new MailAddress(from);
                 MailAddress toAddr = new MailAddress(to);
                 var objSmtpClient = new SmtpClient
@@ -42,6 +44,7 @@ namespace SMTPTest
 
                 };
 
+                //Set message and send
                 using (MailMessage msg = new MailMessage(fromAddr, toAddr)
                 {
                     Subject = subject,
@@ -53,15 +56,7 @@ namespace SMTPTest
                     objSmtpClient.Send(msg);
                 }
 
-                //SmtpClient objSmtpClient = new SmtpClient();
-                //objSmtpClient.Host = "smtp3.hp.com";
-                //objSmtpClient.Port = 25;
-                //objSmtpClient.DeliveryMethod = SmtpDeliveryMethod.Network; //.Network, .PickupDirectoryFromIis, .SpecifiedPickupDirectory
-                //objSmtpClient.EnableSsl = false;
-                //objSmtpClient.Timeout = 100000;
-                //System.Diagnostics.Debug.WriteLine("Smtp set up completed");
-                //objSmtpClient.Send(from, to, subject, message);
-
+                //Email sent notification and web form reset
                 System.Diagnostics.Debug.WriteLine("Email sent successfully");
                 string alertmsg = "Email has been successfully sent.";
                 string content = "window.onload=function(){ alert('";
@@ -75,6 +70,7 @@ namespace SMTPTest
                 return;
             }
 
+            //Exception handing (error made visible to user)
             catch (SmtpException ex)
             {
                 ScriptManager.RegisterClientScriptBlock(this, typeof(Page), "ErrorMessage", "alert('An error occured. We were unable to send your email.');", true);

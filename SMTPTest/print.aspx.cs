@@ -13,13 +13,13 @@ namespace SMTPTest
         protected void Page_LoadComplete(object sender, EventArgs e)
         {
             //load oxpd setup print on page load
-            //throw this back on button click
 
             //lblStatus.Text = "<b style='color:green'>OXPD Print Setup</b>";
         }
 
         protected void BtnWrite_Click(object sender, EventArgs e)
         {
+            //Generate text file from device information on server side
             string FilePath = Server.MapPath("printlabel.txt");
             string FileContent = "MANAGED PRINT SERVICES DEVICE" + Environment.NewLine + Environment.NewLine
                 + "Model: " + modelemail.Value.ToString() + Environment.NewLine
@@ -32,10 +32,11 @@ namespace SMTPTest
                 + "For Support Call 1-800-HELPDESK";
             File.WriteAllText(FilePath, FileContent);
 
+            //redirect to print.html once text file is generated
             if (Page.IsPostBack)
             {
                 //call OXPD Print set up function
-                Response.Redirect("printlabel.html"); //redirect to print.html where print script is automatically loaded
+                Response.Redirect("printlabel.html"); 
             }
 
             //ScriptManager.RegisterClientScriptBlock(this, GetType(), "mykey", "main().print('https://ipg-mis01-wja.auth.hpicorp.net:9443/mpsdigitallabel/Printpage.txt');", true); //try firing on page script if not working
