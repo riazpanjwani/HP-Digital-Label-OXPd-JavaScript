@@ -80,7 +80,6 @@
     <Content Include="Resources\CSS\pure.css" />
     <Content Include="Resources\JavaScript\jspdf.debug.js" />
     <Content Include="Resources\JavaScript\jspdf.js" />
-    <Content Include="Resources\JavaScript\jspdf.min.js" />
     <Content Include="Resources\JavaScript\loggerprint.js" />
     <Content Include="Resources\JavaScript\logger.js" />
     <Content Include="Resources\JavaScript\mainprint.js" />
