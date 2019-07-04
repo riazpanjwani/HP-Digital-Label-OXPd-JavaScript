@@ -1,4 +1,4 @@
-﻿var serial, host, os, mod, ip, prod, mac, test = "N/A";
+﻿var serial, host, os, mod, ip, prod, mac, test, ipv4 = "N/A";
 
 var main = function () {
 	var instance = {};
@@ -29,12 +29,22 @@ var main = function () {
 							prod = deviceinfo.productNumber;
 							mac = deviceinfo.macAddress;
 
+							//Convert ipv6 to ipv4
+							if (ip.substring(0,7) === "::ffff:") {
+								ipv4 = ip.slice(7, ip.length);
+								document.getElementById("network").innerHTML = ipv4;
+							}
+							else {
+								ipv4 = ip;
+								document.getElementById("network").innerHTML = ipv4;
+							}
+
 							//Display device information on html
 							document.getElementById("serialnumber").innerHTML = serial;
 							document.getElementById("hostname").innerHTML = host;
 							document.getElementById("firmware").innerHTML = os;
 							document.getElementById("model").innerHTML = mod;
-							document.getElementById("network").innerHTML = ip;
+							//document.getElementById("network").innerHTML = ip;
 							document.getElementById("productnum").innerHTML = prod;
 							document.getElementById("mac").innerHTML = mac;
 
@@ -47,8 +57,8 @@ var main = function () {
 							console.log("STORING FIRMWARE: " + os);
 							localStorage.setItem("modprint", mod);
 							console.log("STORING MODEL: " + mod);
-							localStorage.setItem("ipprint", ip);
-							console.log("STORING NETWORK: " + ip);
+							localStorage.setItem("ipprint", ipv4);
+							console.log("STORING NETWORK: " + ipv4);
 							localStorage.setItem("prodprint", prod);
 							console.log("STORING PRODUCT: " + prod);
 							localStorage.setItem("macprint", mac);
